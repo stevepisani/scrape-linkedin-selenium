@@ -46,6 +46,7 @@ class ProfileScraper(Scraper):
 
         logger.debug("Scraping profile for URL %s", url)
 
+        self.driver.implicitly_wait(10)
         self.driver.get(url)
         # Wait for page to load dynamically via javascript
         try:
