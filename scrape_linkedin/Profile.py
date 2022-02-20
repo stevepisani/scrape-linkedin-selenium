@@ -34,7 +34,7 @@ class Profile(ResultsObject):
             })}
 
             summary = text_or_default(
-                self.soup, '.pv-about-section', '').replace('... see more', '')
+                self.soup, 'div.display-flex.ph5.pv3 > div > div > div > span:nth-child(1)', '').replace('... see more', '')
 
             personal_info['summary'] = re.sub(
                 r"^About", "", summary, flags=re.IGNORECASE).strip()
