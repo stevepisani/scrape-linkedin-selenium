@@ -30,7 +30,7 @@ class Profile(ResultsObject):
                 'headline': '.text-body-medium.break-words',
                 'company': 'div[aria-label="Current company"]',
                 'school': 'div[aria-label="Education"]',
-                'location': '.text-body-small.inline.break-words',
+                'location': '.text-body-small.inline.t-black--light.break-words',
             })}
 
             summary = text_or_default(
@@ -108,7 +108,7 @@ class Profile(ResultsObject):
         experiences = dict.fromkeys(
             ['jobs', 'education', 'volunteering'], [])
         try:
-            container = one_or_default(self.soup, '.background-section')
+            container = one_or_default(self.soup, '.artdeco-card.ember-view.break-words.pb3.mt4')
 
             jobs = all_or_default(
                 container, '#experience-section ul .pv-position-entity')
